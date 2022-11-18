@@ -29,3 +29,14 @@ This project will utilize Angular Material, service workers, and lazy loading. G
     - `ng g service services/message-service`   To display message for user interation
 
 - First step will be to develope the game-card component to display all of the game data
+
+### 2022/11/18
+- One thing I forgot to include was a helper file game-interface.ts which will contain the
+  typing of each game variable to a specific type to prevent typing issues
+    - id will be an optional number
+    - title will be required string
+    - description will be required string
+    - creator will be required string
+    - imgURL will be optional string
+    - type will be optional string
+    - tags will be optional string array
