@@ -64,3 +64,13 @@ I really don't like when I fix things without knowing WHY it's fixed...
 - In order to really develop the game card component, I need to first get the app connected to the
   backend with the game.service.ts file
 - Will implement httpClientModule
+    - injected HttpClientClient into app.module.ts
+    - HttpClient, HttpHeaders, Observables, of in game.service.ts
+- First function will be to return single item of type <Game> based on ID
+- Through PhpMyAdmin, added an entry to use for testing once I finish the Game Card
+- Added Mat-Card module to app.module.ts
+- Used original html template from previous project and modified a bit to use for testing
+
+### Issue
+When running the project, everything compiled properly, however looking into the console, there is
+a CORS error, I think the sollution will be to update the Express project to allow CORS.
