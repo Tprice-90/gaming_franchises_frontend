@@ -9,6 +9,7 @@ import { GameDetailComponent } from './components/game-detail/game-detail.compon
 import { UpdateGameComponent } from './components/update-game/update-game.component';
 import { AddGameComponent } from './components/add-game/add-game.component';
 import { DeleteGameComponent } from './components/delete-game/delete-game.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DeleteGameComponent } from './components/delete-game/delete-game.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
