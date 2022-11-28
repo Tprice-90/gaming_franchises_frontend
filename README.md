@@ -74,3 +74,9 @@ I really don't like when I fix things without knowing WHY it's fixed...
 ### Issue
 When running the project, everything compiled properly, however looking into the console, there is
 a CORS error, I think the sollution will be to update the Express project to allow CORS.
+
+### 2022/11/27
+- Solved CORS issue by installing and configuring cors on backend server
+- Had another issue afterwards where request was not sending properly, but fixed it by correcting the
+  `gameURL` variable in game-service.ts file, though card is not loading properly still
+- 
