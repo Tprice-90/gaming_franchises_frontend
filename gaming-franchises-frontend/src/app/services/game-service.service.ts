@@ -34,6 +34,6 @@ export class GameServiceService {
 
   // Return a single <Game> object by ID
   getSingleGame(idIndex: number): Observable<Game> {
-    return this.http.get<Game>(`${this.gameURL}`).pipe(catchError(this.handleError));
+    return this.http.get<Game>(`${this.gameURL}/${idIndex}`).pipe(catchError(this.handleError));
   }
 }
