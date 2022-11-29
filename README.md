@@ -79,4 +79,7 @@ a CORS error, I think the sollution will be to update the Express project to all
 - Solved CORS issue by installing and configuring cors on backend server
 - Had another issue afterwards where request was not sending properly, but fixed it by correcting the
   `gameURL` variable in game-service.ts file, though card is not loading properly still
-- 
+- Will take a break from this component development and switch to
+  Game List component to work through issue with no data being
+  recieved from backend, game-card.component will be set like 
+  previous project to prevent any further issues

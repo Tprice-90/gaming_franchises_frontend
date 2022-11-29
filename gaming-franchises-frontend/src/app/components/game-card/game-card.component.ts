@@ -9,15 +9,10 @@ import { GameServiceService } from 'src/app/services/game-service.service';
 })
 export class GameCardComponent implements OnInit {
   @Input() game?: Game;
-  singleGame?: Game[];
   constructor(private gameService: GameServiceService) { 
-    this.singleGame;
   }
 
   ngOnInit(): void {
-    this.gameService.getSingleGame(1).subscribe(game => {
-      this.singleGame = [];
-    });
   }
 
 }
