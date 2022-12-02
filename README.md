@@ -83,3 +83,16 @@ a CORS error, I think the sollution will be to update the Express project to all
   Game List component to work through issue with no data being
   recieved from backend, game-card.component will be set like 
   previous project to prevent any further issues
+
+### 2022/12/02
+- Instead of creating a new branch, I'm going to develop the game-list component (Which I should
+   have done first to begin with) here in order to provide a list function for the content card
+
+### ISSUE
+
+Data from the API was not being processed properly. After a lot of googling and scanning the code
+from the original project, I found the error that I made:
+  - First did a console log within the subscription to the getGames in the content-list component
+  - the data returned as expected but no cards were displaying in the browser
+  - The refference within the <app-game-card> call in the game-list.component.html, I used *ngFor
+    to itterate through the data but never bound the input to the itterable. 

@@ -11,10 +11,10 @@ export class GameServiceService {
 
   gameURL = 'http://localhost:3000/games';
   private httpOptions = {
-    headers: new HttpHeaders({'content-type' : 'application/json'}),
+    headers: new HttpHeaders().set('Content-type', 'applcation/json'),
     observe: 'body',
     responseType: 'json'
-  }
+  } 
 
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
@@ -31,6 +31,10 @@ export class GameServiceService {
   }
 
   constructor(private http: HttpClient) { }
+  // Return all <Game> objects
+  getGames(): Observable<Game[]> {
+    return this.http.get<Game[]>(this.gameURL);
+  }
 
   // Return a single <Game> object by ID
   getSingleGame(idIndex: number): Observable<Game> {
