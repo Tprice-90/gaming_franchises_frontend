@@ -32,12 +32,12 @@ export class GameServiceService {
 
   constructor(private http: HttpClient) { }
   // Return all <Game> objects
-  getGames(): Observable<Game[]> {
+  getAll(): Observable<Game[]> {
     return this.http.get<Game[]>(this.gameURL);
   }
 
   // Return a single <Game> object by ID
-  getSingleGame(idIndex: number): Observable<Game> {
+  get(idIndex: number): Observable<Game> {
     return this.http.get<Game>(`${this.gameURL}/${idIndex}`).pipe(catchError(this.handleError));
   }
 }
