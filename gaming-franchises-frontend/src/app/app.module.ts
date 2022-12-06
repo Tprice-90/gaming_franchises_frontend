@@ -13,10 +13,14 @@ import { GameDetailComponent } from './components/game-detail/game-detail.compon
 import { UpdateGameComponent } from './components/update-game/update-game.component';
 import { AddGameComponent } from './components/add-game/add-game.component';
 import { DeleteGameComponent } from './components/delete-game/delete-game.component';
+import { GameDialogBoxComponent } from './components/game-dialog-box/game-dialog-box.component';
 
 // Material Imports
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -26,14 +30,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     GameDetailComponent,
     UpdateGameComponent,
     AddGameComponent,
-    DeleteGameComponent
+    DeleteGameComponent,
+    GameDialogBoxComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    MatInputModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

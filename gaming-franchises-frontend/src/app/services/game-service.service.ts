@@ -40,4 +40,9 @@ export class GameServiceService {
   get(idIndex: number): Observable<Game> {
     return this.http.get<Game>(`${this.gameURL}/${idIndex}`).pipe(catchError(this.handleError));
   }
+
+  // Add game to database
+  create(newGameObject: Game): Observable<Game> {
+    return this.http.post<Game>(this.gameURL, newGameObject);
+  }
 }
