@@ -22,7 +22,7 @@ export class GameDialogBoxComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // Add game content from child component
+  // Add game content from child component and convert tag input to array
   addGameFromChild(): void {
     this.newGame.tags = this.tempTags.split(',');
     this.dialogRef.close(this.newGame);
