@@ -96,3 +96,16 @@ from the original project, I found the error that I made:
   - the data returned as expected but no cards were displaying in the browser
   - The refference within the <app-game-card> call in the game-list.component.html, I used *ngFor
     to itterate through the data but never bound the input to the itterable. 
+
+### 2022/12/06
+
+- Now that content is pulled from the api and displayed properly, I will now be implimenting the
+  add-game component
+- New function create() will be added to game.service.ts file to send a post request to api
+- Dialog box will be added to add-game component, add-game component html will include a button
+  which will contain the function openGameDialog() (MatDialogModule added to app.module.ts)
+  and onNoClick() which will close the dialog box
+- Will also need to create a component for game-dialog-box, used to add AND modify content
+  - `ng g c components/game-dialog-box`
+- Html for dialog box will be copied from original project
+  - MatFormInput and MatToolTip will be added to app.module.ts
