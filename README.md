@@ -109,3 +109,8 @@ from the original project, I found the error that I made:
   - `ng g c components/game-dialog-box`
 - Html for dialog box will be copied from original project
   - MatFormInput and MatToolTip will be added to app.module.ts
+
+  ### 2022/12/08
+
+  - Update-game component will borrow from add-game component functions, but Event emitter will
+    be an update call rather than a create call

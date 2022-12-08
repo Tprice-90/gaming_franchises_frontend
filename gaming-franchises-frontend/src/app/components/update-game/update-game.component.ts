@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Game } from 'src/app/helper/game-interface';
 
 @Component({
   selector: 'app-update-game',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./update-game.component.scss']
 })
 export class UpdateGameComponent implements OnInit {
+  // Output to update game
+  
 
   constructor() { }
 
