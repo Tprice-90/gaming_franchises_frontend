@@ -11,9 +11,10 @@ export class GameServiceService {
 
   gameURL = 'http://localhost:3000/games';
   private httpOptions = {
-    headers: new HttpHeaders().set('Content-type', 'applcation/json'),
-    observe: 'body',
-    responseType: 'json'
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'my-auth-token'
+    })
   } 
 
   private handleError(error: HttpErrorResponse) {
@@ -43,6 +44,11 @@ export class GameServiceService {
 
   // Add game to database
   create(newGameObject: Game): Observable<Game> {
-    return this.http.post<Game>(this.gameURL, newGameObject);
+    return this.http.post<Game>(this.gameURL, newGameObject, this.httpOptions);
+  }
+
+  // Update game in database
+  update(gameObject: Game): Observable<Game> {
+    return this.http.put<Game>(this.gameURL, gameObject, this.httpOptions)
   }
 }

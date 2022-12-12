@@ -14,7 +14,7 @@ export class GameDialogBoxComponent implements OnInit {
     title: '', description: '', creator: '', imgURL: '', type: '' 
   };
   tempId: string = '';
-  tempTags: string = '';
+  //tempTags: string = '';
 
   constructor(public dialogRef: MatDialogRef<GameDialogBoxComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Game) { }
@@ -24,8 +24,13 @@ export class GameDialogBoxComponent implements OnInit {
 
   // Add game content from child component and convert tag input to array
   addGameFromChild(): void {
-    this.newGame.tags = this.tempTags.split(',');
+    //this.newGame.tags = this.tempTags.split(',');
     this.dialogRef.close(this.newGame);
+  }
+
+  // Update game with injected data
+  updateGameFromChild() {
+
   }
 
   // Closing the dialog box

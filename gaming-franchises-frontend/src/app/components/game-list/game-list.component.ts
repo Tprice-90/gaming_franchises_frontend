@@ -24,4 +24,8 @@ export class GameListComponent implements OnInit {
     });
   }
 
+  addGameToList(): void {
+    this.gameService.getAll().subscribe(gameArray => this.gameList = gameArray)
+  }
+
 }

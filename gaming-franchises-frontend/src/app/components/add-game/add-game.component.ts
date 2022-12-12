@@ -19,7 +19,7 @@ export class AddGameComponent implements OnInit {
     title: '', description: '', creator: '', imgURL: '', type: '' 
   };
   tempId: string = '';
-  tempTags: string = '';
+  //tempTags: string = '';
 
   @Input() id: string = '';
 
@@ -40,7 +40,7 @@ export class AddGameComponent implements OnInit {
       description: this.newGame.description,
       creator: this.newGame.creator,
       type: this.newGame.type,
-      tags: this.newGame.tags
+      // tags: this.newGame.tags
     }
     
     const dialogRef = this.dialog.open(GameDialogBoxComponent, dialogConfig);
