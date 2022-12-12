@@ -5,5 +5,5 @@ export interface Game {
     creator: string;
     imgURL?: string;
     type?: string;
-    tags?: string[]
+    //tags?: string[]
 }

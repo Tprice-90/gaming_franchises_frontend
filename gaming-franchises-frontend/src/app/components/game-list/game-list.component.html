@@ -1,1 +1,3 @@
+<app-add-game (newGameEvent)="addGameToList()"></app-add-game>
+
 <app-game-card *ngFor="let item of gameList"[game]='item'></app-game-card>

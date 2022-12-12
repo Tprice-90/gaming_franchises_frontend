@@ -109,3 +109,17 @@ from the original project, I found the error that I made:
   - `ng g c components/game-dialog-box`
 - Html for dialog box will be copied from original project
   - MatFormInput and MatToolTip will be added to app.module.ts
+
+### 2022/12/08
+
+- Update-game component will borrow from add-game component functions, but Event emitter will
+  be an update call rather than a create call
+
+### 2022/12/12
+- Ran into an issue with the tags portion of the service, after researching how it works, I was
+  implmeneting this improperly, I need to reconfigure the backend to have a one to many relationship
+  which I will figure out later, for the time being I am commenting out all use of the tags property.
+- Added addGameToList() to game-list component which is the value emitted from the newGameEvent 
+  EventEmitter contained in the add-game-component, this function calls the getAll() function from
+  game-service when a new game is added in order to update the page without having to refresh the
+  page after the post call is made

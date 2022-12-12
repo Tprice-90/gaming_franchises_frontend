@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // Routing Import
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +39,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
     MatCardModule,
     MatDialogModule,
     MatInputModule,
