@@ -12,7 +12,7 @@ export class GameDialogBoxComponent implements OnInit {
 
   // declare newGame variable and control type
   newGame: Game = {
-    title: '', description: '', creator: '', imgURL: '', type: '' 
+    id: undefined, title: '', description: '', creator: '', imgURL: '', type: '' 
   };
   tempId: string = '';
   //tempTags: string = '';
@@ -34,7 +34,8 @@ export class GameDialogBoxComponent implements OnInit {
 
   // Update game with injected data
   updateGameFromChild() {
-
+    this.gameService.update(this.data.id!, this.newGame);
+    this.dialogRef.close(this.newGame);
   }
 
   // Closing the dialog box
