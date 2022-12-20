@@ -48,7 +48,7 @@ export class GameServiceService {
   }
 
   // Update game in database
-  update(gameID: number, gameObject: Game): Observable<Game> {
+  update(gameID: string, gameObject: Game): Observable<Game> {
     return this.http.put<Game>(`${this.gameURL}/${gameID}`, gameObject, this.httpOptions)
   }
 }

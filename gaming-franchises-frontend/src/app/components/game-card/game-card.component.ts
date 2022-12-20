@@ -13,7 +13,6 @@ export class GameCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(`Game Card Data: ${this.game?.title}`);
   }
 
 }

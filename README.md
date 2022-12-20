@@ -123,19 +123,3 @@ from the original project, I found the error that I made:
   EventEmitter contained in the add-game-component, this function calls the getAll() function from
   game-service when a new game is added in order to update the page without having to refresh the
   page after the post call is made
-
-### 2022/12/16
-- Haven't updated this in a couple days due to troubleshooting the update-content component
-- Had an issue where I couldn't inject all the data into the dialog box when the component 
-  was used in the content-card component, turned out the issue was I was using the wrong
-  ngModel declaration, was using newGame, which was an object of empty variables used
-  for the component, changed the declaration to the @Inject data variable and now the 
-  data is being injected properly to be update
-- Also had to update the update() method in game-service because it wasn't taking an id
-  which is needed on the backend
-- added a few console.logs to make sure all data was appearing in each of the components
-- Moved create() function from the add-game component into the dialog component due to the fact
-  that if the dialog box was closed without submitting, it would still send data to the backend
-  resulting as an undefined entry and receiving an error response from the server
-- Currently, Update function in dialog component is not functioning, not sure if it is an error
-  on the front end service or the backend route, more researching will need to be done
