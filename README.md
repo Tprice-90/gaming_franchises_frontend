@@ -139,3 +139,14 @@ from the original project, I found the error that I made:
   resulting as an undefined entry and receiving an error response from the server
 - Currently, Update function in dialog component is not functioning, not sure if it is an error
   on the front end service or the backend route, more researching will need to be done
+
+### 2022/12/20
+- Had to revert all changes made since moving the create() function to the dialog, did not test properly
+  and noticed that adding a new game was not sending to the server
+- Still have an issue where even when the dialog is closed without clicking Add Game, undefined data is
+  being sent to the server, issue is with add-game components afterClose() method holding the create()
+  function
+- Solved this issue with an if() check to see if data is true else return
+- Fixed an issue on the back end with the SQL Update statement 
+- Update Game component now takes in Mat Dialog Data properly and sends the data to the server
+- Next step is to update the game list when the Update is made

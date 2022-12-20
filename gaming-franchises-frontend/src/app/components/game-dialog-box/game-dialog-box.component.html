@@ -6,23 +6,23 @@
     </mat-form-field>
     <mat-form-field>
         <mat-label for="title">Title</mat-label>
-        <input matInput matTooltip="Add Title" matTooltipPosition="above" name="title" [(ngModel)]="data.title">
+        <input matInput matTooltip="Add Title" matTooltipPosition="above" name="title" [(ngModel)]="newGame.title">
     </mat-form-field>
     <mat-form-field>
         <mat-label for="description">Description</mat-label>
-        <input matInput matTooltip="Give a description" matTooltipPosition="above" name="description" [(ngModel)]="data.description">
+        <input matInput matTooltip="Give a description" matTooltipPosition="above" name="description" [(ngModel)]="newGame.description">
     </mat-form-field>
     <mat-form-field>
         <mat-label for="creator">Creator</mat-label>
-        <input matInput matTooltip="Who Made the game?" matTooltipPosition="above" name="creator" [(ngModel)]="data.creator">
+        <input matInput matTooltip="Who Made the game?" matTooltipPosition="above" name="creator" [(ngModel)]="newGame.creator">
     </mat-form-field>
     <mat-form-field>
         <mat-label for="imgURL">ImgUrl</mat-label>
-        <input matInput matTooltip="Not required" matTooltipPosition="above" name="imgUrl" [(ngModel)]="data.imgURL">
+        <input matInput matTooltip="Not required" matTooltipPosition="above" name="imgUrl" [(ngModel)]="newGame.imgURL">
     </mat-form-field>
     <mat-form-field>
         <mat-label for="type">Type</mat-label>
-        <input matInput matTooltip="This will help add it to a Content List" matTooltipPosition="above" name="type" [(ngModel)]="data.type">
+        <input matInput matTooltip="This will help add it to a Content List" matTooltipPosition="above" name="type" [(ngModel)]="newGame.type">
     </mat-form-field>
     <!-- <mat-form-field>
         <mat-label for="tags">Tags</mat-label>
@@ -30,7 +30,6 @@
     </mat-form-field> -->
 </div>
  <div mat-dialog-actions>
-    <button *ngIf="!data" mat-raised-button color="primary" (click)="addGameFromChild()">Add Game</button>
-    <button *ngIf="data" mat-raised-button color="primary" (click)="updateGameFromChild()">Update</button>
+    <button mat-raised-button color="primary" (click)="addGameFromChild()">Add Game</button>
     <button mat-raised-button color="accent" (click)="onNoClick()">Cancel</button>
 </div>

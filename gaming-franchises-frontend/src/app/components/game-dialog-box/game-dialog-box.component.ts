@@ -12,14 +12,18 @@ export class GameDialogBoxComponent implements OnInit {
 
   // declare newGame variable and control type
   newGame: Game = {
-    id: undefined, title: '', description: '', creator: '', imgURL: '', type: '' 
+    id: this.data.id, 
+    title: this.data.title, 
+    description: this.data.description, 
+    creator: this.data.creator, 
+    imgURL: this.data.imgURL, 
+    type: this.data.type 
   };
   tempId: string = '';
   //tempTags: string = '';
 
   constructor(public dialogRef: MatDialogRef<GameDialogBoxComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Game,
-    private gameService: GameServiceService) { }
+    @Inject(MAT_DIALOG_DATA) public data: Game) { }
 
   ngOnInit(): void {
     console.log(this.data);
@@ -27,14 +31,12 @@ export class GameDialogBoxComponent implements OnInit {
 
   // Add game content from child component and convert tag input to array
   addGameFromChild(): void {
-    this.gameService.create(this.newGame);
     //this.newGame.tags = this.tempTags.split(',');
     this.dialogRef.close(this.newGame);
   }
 
   // Update game with injected data
   updateGameFromChild() {
-    this.gameService.update(this.data.id!, this.newGame);
     this.dialogRef.close(this.newGame);
   }
 

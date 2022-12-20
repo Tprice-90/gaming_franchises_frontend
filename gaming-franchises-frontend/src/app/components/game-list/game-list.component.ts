@@ -9,11 +9,9 @@ import { GameServiceService } from 'src/app/services/game-service.service';
 })
 export class GameListComponent implements OnInit {
   gameList: Game[];
-  singleGame: Game[];
 
   constructor(private gameService: GameServiceService) {
     this.gameList = [];
-    this.singleGame = [];
    }
 
   ngOnInit(): void {

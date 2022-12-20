@@ -46,7 +46,15 @@ export class AddGameComponent implements OnInit {
     const dialogRef = this.dialog.open(GameDialogBoxComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(data => {
-        console.log(data);
+      if(data) {
+        this.gameService.create(data).subscribe((newGameFromServer) => {
+          this.newGameEvent.emit(newGameFromServer);
+          console.log(data);
+        });
+      }
+      else {
+        return;
+      }
     });
   }
 }
