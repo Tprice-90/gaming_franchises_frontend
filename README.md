@@ -150,3 +150,7 @@ from the original project, I found the error that I made:
 - Fixed an issue on the back end with the SQL Update statement 
 - Update Game component now takes in Mat Dialog Data properly and sends the data to the server
 - Next step is to update the game list when the Update is made
+
+### 2022/12/21
+- Had to add a condition to dialog box components submit button to check if the data being injected for
+  the title existed to determine if the button should add content or update content

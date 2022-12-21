@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Game } from 'src/app/helper/game-interface';
 import { GameServiceService } from 'src/app/services/game-service.service';
@@ -12,14 +12,14 @@ export class GameDialogBoxComponent implements OnInit {
 
   // declare newGame variable and control type
   newGame: Game = {
-    id: this.data.id, 
-    title: this.data.title, 
-    description: this.data.description, 
-    creator: this.data.creator, 
-    imgURL: this.data.imgURL, 
-    type: this.data.type 
+    id: this.data.id,
+    title: this.data.title,
+    description: this.data.description,
+    creator: this.data.creator,
+    imgURL: this.data.imgURL,
+    type: this.data.type,
   };
-  tempId: string = '';
+  
   //tempTags: string = '';
 
   constructor(public dialogRef: MatDialogRef<GameDialogBoxComponent>,
