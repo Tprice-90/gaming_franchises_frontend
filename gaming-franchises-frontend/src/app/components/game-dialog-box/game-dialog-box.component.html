@@ -1,10 +1,6 @@
 <h2 mat-dialog-title>Add New Game</h2>
 <div mat-dialog-content>
     <mat-form-field>
-        <mat-label for="id">ID</mat-label>
-        <input matInput disabled name="id" matTooltip="Disabled" matTooltipPosition="above" [(ngModel)]="tempId">
-    </mat-form-field>
-    <mat-form-field>
         <mat-label for="title">Title</mat-label>
         <input matInput matTooltip="Add Title" matTooltipPosition="above" name="title" [(ngModel)]="newGame.title">
     </mat-form-field>
@@ -30,6 +26,7 @@
     </mat-form-field> -->
 </div>
  <div mat-dialog-actions>
-    <button mat-raised-button color="primary" (click)="addGameFromChild()">Add Game</button>
+    <button *ngIf="!data.title" mat-raised-button color="primary" (click)="addGameFromChild()">Add Game</button>
+    <button *ngIf="data.title" mat-raised-button color="primary" (click)="updateGameFromChild()">Update Game</button>
     <button mat-raised-button color="accent" (click)="onNoClick()">Cancel</button>
 </div>

@@ -123,3 +123,34 @@ from the original project, I found the error that I made:
   EventEmitter contained in the add-game-component, this function calls the getAll() function from
   game-service when a new game is added in order to update the page without having to refresh the
   page after the post call is made
+
+### 2022/12/16
+- Haven't updated this in a couple days due to troubleshooting the update-content component
+- Had an issue where I couldn't inject all the data into the dialog box when the component 
+  was used in the content-card component, turned out the issue was I was using the wrong
+  ngModel declaration, was using newGame, which was an object of empty variables used
+  for the component, changed the declaration to the @Inject data variable and now the 
+  data is being injected properly to be update
+- Also had to update the update() method in game-service because it wasn't taking an id
+  which is needed on the backend
+- added a few console.logs to make sure all data was appearing in each of the components
+- Moved create() function from the add-game component into the dialog component due to the fact
+  that if the dialog box was closed without submitting, it would still send data to the backend
+  resulting as an undefined entry and receiving an error response from the server
+- Currently, Update function in dialog component is not functioning, not sure if it is an error
+  on the front end service or the backend route, more researching will need to be done
+
+### 2022/12/20
+- Had to revert all changes made since moving the create() function to the dialog, did not test properly
+  and noticed that adding a new game was not sending to the server
+- Still have an issue where even when the dialog is closed without clicking Add Game, undefined data is
+  being sent to the server, issue is with add-game components afterClose() method holding the create()
+  function
+- Solved this issue with an if() check to see if data is true else return
+- Fixed an issue on the back end with the SQL Update statement 
+- Update Game component now takes in Mat Dialog Data properly and sends the data to the server
+- Next step is to update the game list when the Update is made
+
+### 2022/12/21
+- Had to add a condition to dialog box components submit button to check if the data being injected for
+  the title existed to determine if the button should add content or update content

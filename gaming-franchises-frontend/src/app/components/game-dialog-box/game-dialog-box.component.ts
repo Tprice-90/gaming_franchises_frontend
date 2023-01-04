@@ -1,6 +1,7 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Game } from 'src/app/helper/game-interface';
+import { GameServiceService } from 'src/app/services/game-service.service';
 
 @Component({
   selector: 'app-game-dialog-box',
@@ -11,15 +12,21 @@ export class GameDialogBoxComponent implements OnInit {
 
   // declare newGame variable and control type
   newGame: Game = {
-    title: '', description: '', creator: '', imgURL: '', type: '' 
+    id: this.data.id,
+    title: this.data.title,
+    description: this.data.description,
+    creator: this.data.creator,
+    imgURL: this.data.imgURL,
+    type: this.data.type,
   };
-  tempId: string = '';
+  
   //tempTags: string = '';
 
   constructor(public dialogRef: MatDialogRef<GameDialogBoxComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Game) { }
 
   ngOnInit(): void {
+    console.log(this.data);
   }
 
   // Add game content from child component and convert tag input to array
@@ -30,7 +37,7 @@ export class GameDialogBoxComponent implements OnInit {
 
   // Update game with injected data
   updateGameFromChild() {
-
+    this.dialogRef.close(this.newGame);
   }
 
   // Closing the dialog box
