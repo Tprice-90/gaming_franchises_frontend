@@ -154,3 +154,14 @@ from the original project, I found the error that I made:
 ### 2022/12/21
 - Had to add a condition to dialog box components submit button to check if the data being injected for
   the title existed to determine if the button should add content or update content
+
+### 2023/01/05
+- Next step will be to implement a delete button component that will be injected into each game card
+  idea is for the game id to be used as a reference to the button to call the delete function from
+  the game service
+- Added delete button template to delete-game component, click function needs to be created
+- Added delete function to game service
+- deleteGame() takes an id number as a param, then calls tha delete from game service, on testing
+  the server was not finding the object, added a console log to the ngInit found ID was undefined
+- still getting an error response from the server: 
+    message: "Http failure response for http://localhost:3000/games/9: 404 Not Found"
