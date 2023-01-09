@@ -167,5 +167,7 @@ from the original project, I found the error that I made:
     message: "Http failure response for http://localhost:3000/games/9: 404 Not Found"
 
 ### 2023/01/09
-- Solved delete issue, was missing '/' from id parameter in remove function which was causing the
-  issue with the route failiure
+- Solved delete issue with delete function, error was on the backend where the remove function
+  had an id parameter which was missing a '/' which was causing an error with url pathing.
+  Deleting a game works properly now but I realize I need to create a confirmation for
+  proper accessibility, will work on that now.
