@@ -165,3 +165,7 @@ from the original project, I found the error that I made:
   the server was not finding the object, added a console log to the ngInit found ID was undefined
 - still getting an error response from the server: 
     message: "Http failure response for http://localhost:3000/games/9: 404 Not Found"
+
+### 2023/01/09
+- Solved delete issue, was missing '/' from id parameter in remove function which was causing the
+  issue with the route failiure
