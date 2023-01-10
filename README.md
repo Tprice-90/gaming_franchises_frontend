@@ -171,3 +171,16 @@ from the original project, I found the error that I made:
   had an id parameter which was missing a '/' which was causing an error with url pathing.
   Deleting a game works properly now but I realize I need to create a confirmation for
   proper accessibility, will work on that now.
+
+### 2023/01/10
+- After doing some googling, since I didn't want to have to create a new component for a confirm
+  delete dialog box, found [this](https://stackoverflow.com/questions/52311173/angular-material-create-dialog-box-in-same-component-as-existing-functionality) stackOverflow
+  article which describes how to use an ng-template-ref to open a dialog box in the same component.
+  I used the code provided and edited it to call the delete() method if 'yes' was selected.
+  'yes' is tied to matDialogClose reference, if 'no' is selected then the function just returns
+  and nothing is deleted
+- At this point all CRUD functions are properly implemented, will commit this branch and push to 
+  main.
+- Next step will to adjust update and delete components to refresh the game-list component after
+  call has happened, at this point the page needs to be refreshed manually which is poor 
+  accessibility.
