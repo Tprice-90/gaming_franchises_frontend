@@ -184,3 +184,11 @@ from the original project, I found the error that I made:
 - Next step will to adjust update and delete components to refresh the game-list component after
   call has happened, at this point the page needs to be refreshed manually which is poor 
   accessibility.
+
+### 2023/01/13
+- Cleaned up game-list component ngOnInit function to call addGameToList() to reduce redundant code
+- Cleaned up add-game variables, removed tempID and added id to newGame object with undefined,
+  removed id @Input because no longer needed
+- Trying to figure out how to properly update the page has been unsuccessful so far
+- Tried creating a function updateGame() in game-card component which would reassign the values
+  for the card with the emitted data from the update-game component but so far it has not worked

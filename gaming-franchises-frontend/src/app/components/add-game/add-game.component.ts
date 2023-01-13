@@ -16,12 +16,9 @@ export class AddGameComponent implements OnInit {
 
   // Define Game object
   newGame: Game = {
-    title: '', description: '', creator: '', imgURL: '', type: '' 
+    id: undefined, title: '', description: '', creator: '', imgURL: '', type: '' 
   };
-  tempId: string = '';
   //tempTags: string = '';
-
-  @Input() id: string = '';
 
   constructor(private gameService: GameServiceService, private dialog: MatDialog) { }
 
@@ -35,7 +32,7 @@ export class AddGameComponent implements OnInit {
     dialogConfig.disableClose = false;
     dialogConfig.width = "300px";
     dialogConfig.data = {
-      id: this.id,
+      id: this.newGame.id,
       title: this.newGame.title,
       description: this.newGame.description,
       creator: this.newGame.creator,
