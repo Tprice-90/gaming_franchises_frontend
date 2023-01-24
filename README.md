@@ -192,3 +192,36 @@ from the original project, I found the error that I made:
 - Trying to figure out how to properly update the page has been unsuccessful so far
 - Tried creating a function updateGame() in game-card component which would reassign the values
   for the card with the emitted data from the update-game component but so far it has not worked
+
+### 2023/01/23
+- Did some googling on how to properly use BehaviorSubject in order to keep an updated subscription
+  to a list of games and any updates to that list
+- Found [this](https://github.com/fransyozef/crud-example-angular/blob/master/src/app/items/_services/items.service.ts)
+  github repository which utilizes a behavior subject in a service and adjusted the code to use the Game
+  model.
+- Added a behavior subject with type Game[] which will contain the following functions:
+  - getAllGames(): will retrieve the list of games via subscription
+  - getSingleGame(): will retrieve a single game from the list
+  - addGameToList(): will push a game of type Game to the list
+  - updateGameInList(): will find a game by id in the list and update that index vlaue
+  - deleteGameFromList(): will find a game by id in the list and splice it from the list
+- Next I will refactor the game service getAll() function to push items to the behavior subject
+
+### 2022/01/24
+- Forgot I needed to update the getAll() function to use the rxjs .tap() method to populate the behavior
+  subject with the items from the database, I will inject this function into the app.component to
+  call the function once when the app is started, then whenever the app is restarted it will repopulate
+  with any updated data.
+- Will also replace the getAll() function in games-list component with the new getAllGames() function
+  to instead populate the list from the behavior subject rather than calling the database, this will
+  help reduce api calls
+- updated game-list html to check for game items with new <section> tag with ngIf that checks if games$
+  behavior subject is truthy and calls it as games, also removed newGameEvent since it's no longer needed
+- in add-game component, removed addGameEvent and just used the data object in the create() subscription,
+  in the same function, added the data object in the addGameToList() subscription
+- in delete-game component, removed deleteGameEvent and used the id variable in the data object to
+  delete the game item with delete() subscription, also used the id variable to call the deleteGameFromList()
+  subscription
+- in the update-game component, removed the updateGameEvent and subscribed to the update() function with 
+  the injected data, also subscribed to the updateGameInList() function with the injected data
+- Now all my crud functions work properly and the game list is properly updated after each function

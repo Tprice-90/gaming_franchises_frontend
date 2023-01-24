@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { GameCardComponent } from './components/game-card/game-card.component';
-import { Game } from './helper/game-interface';
+import { Component, OnInit } from '@angular/core';
+import { GameServiceService } from './services/game-service.service';
+
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,11 @@ import { Game } from './helper/game-interface';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  @Input() game?: Game
   title = 'gaming-franchises-frontend';
+
+  constructor(private gameService: GameServiceService) {}
+
+  ngOnInit() {
+    this.gameService.getAll().subscribe();
+  }
 }

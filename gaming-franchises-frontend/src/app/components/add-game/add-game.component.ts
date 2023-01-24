@@ -10,10 +10,6 @@ import { GameDialogBoxComponent } from '../game-dialog-box/game-dialog-box.compo
   styleUrls: ['./add-game.component.scss']
 })
 export class AddGameComponent implements OnInit {
-
-  // Event Emitter to send game data
-  @Output() newGameEvent: EventEmitter<Game> = new EventEmitter<Game>();
-
   // Define Game object
   newGame: Game = {
     id: undefined, title: '', description: '', creator: '', imgURL: '', type: '' 
@@ -44,10 +40,8 @@ export class AddGameComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(data => {
       if(data) {
-        this.gameService.create(data).subscribe((newGameFromServer) => {
-          this.newGameEvent.emit(newGameFromServer);
-          console.log(data);
-        });
+        this.gameService.create(data).subscribe();
+        this.gameService.addGameToList(data);
       }
       else {
         return;
