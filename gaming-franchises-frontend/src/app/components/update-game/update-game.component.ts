@@ -46,7 +46,7 @@ export class UpdateGameComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(data => {
       if(data) {
-        this.gameService.update(data.id, data).subscribe();
+        this.gameService.update(data.id!, data).subscribe();
         this.gameService.updateGameInList(data.id, data)
       }
       else {
