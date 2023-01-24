@@ -11,9 +11,6 @@ import { GameDialogBoxComponent } from '../game-dialog-box/game-dialog-box.compo
 })
 export class UpdateGameComponent implements OnInit {
 
-  // Update Game Event
-  @Output() updateGameEvent: EventEmitter<Game> = new EventEmitter<Game>
-
   //Game input from Game Card Component
   @Input() game?: Game;
 
@@ -49,10 +46,8 @@ export class UpdateGameComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(data => {
       if(data) {
-        this.gameService.update(data.id!, data).subscribe((newGameFromServer) => {
-          console.log(data);
-          this.updateGameEvent.emit(newGameFromServer);
-        });
+        this.gameService.update(data.id, data).subscribe();
+        this.gameService.updateGameInList(data.id, data)
       }
       else {
         return;

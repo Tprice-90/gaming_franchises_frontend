@@ -1,3 +1,4 @@
-<app-add-game (newGameEvent)="addGameToList()"></app-add-game>
-
-<app-game-card *ngFor="let item of gameList"[game]='item'></app-game-card>
+<app-add-game></app-add-game>
+<section class="gameList" *ngIf="games$ | async as games">
+    <app-game-card *ngFor="let item of games"[game]='item'></app-game-card>
+</section>

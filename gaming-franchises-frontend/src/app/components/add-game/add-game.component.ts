@@ -10,18 +10,11 @@ import { GameDialogBoxComponent } from '../game-dialog-box/game-dialog-box.compo
   styleUrls: ['./add-game.component.scss']
 })
 export class AddGameComponent implements OnInit {
-
-  // Event Emitter to send game data
-  @Output() newGameEvent: EventEmitter<Game> = new EventEmitter<Game>();
-
   // Define Game object
   newGame: Game = {
-    title: '', description: '', creator: '', imgURL: '', type: '' 
+    id: undefined, title: '', description: '', creator: '', imgURL: '', type: '' 
   };
-  tempId: string = '';
   //tempTags: string = '';
-
-  @Input() id: string = '';
 
   constructor(private gameService: GameServiceService, private dialog: MatDialog) { }
 
@@ -35,7 +28,7 @@ export class AddGameComponent implements OnInit {
     dialogConfig.disableClose = false;
     dialogConfig.width = "300px";
     dialogConfig.data = {
-      id: this.id,
+      id: this.newGame.id,
       title: this.newGame.title,
       description: this.newGame.description,
       creator: this.newGame.creator,
@@ -47,10 +40,8 @@ export class AddGameComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(data => {
       if(data) {
-        this.gameService.create(data).subscribe((newGameFromServer) => {
-          this.newGameEvent.emit(newGameFromServer);
-          console.log(data);
-        });
+        this.gameService.create(data).subscribe();
+        this.gameService.addGameToList(data);
       }
       else {
         return;

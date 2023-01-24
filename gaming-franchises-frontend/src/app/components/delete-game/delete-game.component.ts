@@ -11,7 +11,6 @@ import { GameServiceService } from 'src/app/services/game-service.service';
 export class DeleteGameComponent implements OnInit {
   @ViewChild('callDeleteDialog') callDeleteDialog?: TemplateRef<any>;
   @Input() game?: Game;
-  @Output() deleteGameEvent: EventEmitter<Game> = new EventEmitter<Game>;
 
   gameID!: number;
   constructor(private gameService: GameServiceService, private dialog: MatDialog) { 
@@ -39,8 +38,7 @@ export class DeleteGameComponent implements OnInit {
 
   // Delete game function
   deleteGame(id: number) {
-    this.gameService.delete(id).subscribe((deleteGameFromServer) => {
-      this.deleteGameEvent.emit(deleteGameFromServer);
-    });
+    this.gameService.delete(id).subscribe();
+    this.gameService.deleteGameFromList(id);
   }
 }
