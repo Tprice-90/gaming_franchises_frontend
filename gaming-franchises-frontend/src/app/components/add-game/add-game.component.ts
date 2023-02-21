@@ -24,6 +24,7 @@ export class AddGameComponent implements OnInit {
   openGameDialog() {
     const dialogConfig = new MatDialogConfig();
 
+    dialogConfig.panelClass = 'custom-dialog';
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = "300px";
