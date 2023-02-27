@@ -24,3 +24,26 @@
     <app-update-game [game]="game"></app-update-game>
     <app-delete-game [game]="game"></app-delete-game>
 </div>
+
+<mat-card class="game-card">
+    <mat-card-header>
+      <mat-card-title>{{ game?.title }}</mat-card-title>
+      <mat-card-subtitle>{{ game?.creator }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image *ngIf="game?.imgURL" [src]='game?.imgURL' [alt]='game?.title' width="300" />
+    <img mat-card-image *ngIf="!game?.imgURL" src="https://www.seekpng.com/png/detail/820-8209893_game-controller-hand-drawn-tool-comments-transparent-background.png" alt="Default Image" />
+
+    <mat-card-content>
+        <h3 *ngIf="game?.type">Game Type: {{ game ? game.type : "" }}</h3>
+        <!-- <div class="tags" *ngIf="game?.tags">
+            <span appHoverAffect bold="bold" class="tag" *ngFor="let tag of game?.tags">
+                {{ tag }}
+            </span>
+        </div> -->
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- <a [routerLink]="['/list', game?.id ?? 0]" routerLinkActive="active">
+        Game Details
+      </a> -->
+    </mat-card-actions>
+  </mat-card>
