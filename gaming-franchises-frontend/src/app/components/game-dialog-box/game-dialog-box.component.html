@@ -26,8 +26,8 @@
         <input matInput matTooltip="It's like Twitter" matTooltipPosition="above" name="tags" [(ngModel)]="tempTags">
     </mat-form-field> -->
 </div>
- <div mat-dialog-actions>
+ <div class="actions" mat-dialog-actions>
     <button *ngIf="!data.title" mat-raised-button color="primary" (click)="addGameFromChild()">Add Game</button>
     <button *ngIf="data.title" mat-raised-button color="primary" (click)="updateGameFromChild()">Update Game</button>
-    <button mat-raised-button color="accent" (click)="onNoClick()">Cancel</button>
+    <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
 </div>

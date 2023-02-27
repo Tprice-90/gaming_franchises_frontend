@@ -1,0 +1,27 @@
+:host {
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+    div {
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+    }
+
+    p {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    h1, h2, h3 {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+        object-fit: contain;
+    }
+}

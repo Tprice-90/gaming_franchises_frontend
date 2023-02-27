@@ -32,7 +32,7 @@ export class UpdateGameComponent implements OnInit {
 
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
-    dialogConfig.width = "300px";
+    dialogConfig.width = "50vw";
     dialogConfig.data = {
       id: this.game?.id,
       title: this.game?.title,
