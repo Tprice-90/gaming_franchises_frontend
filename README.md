@@ -225,3 +225,15 @@ from the original project, I found the error that I made:
 - in the update-game component, removed the updateGameEvent and subscribed to the update() function with 
   the injected data, also subscribed to the updateGameInList() function with the injected data
 - Now all my crud functions work properly and the game list is properly updated after each function
+
+### 2023/02/21
+- Needed to do some research on how to edit the style of the Mat Dialog's Mat-Label. This is due to the fact
+  that using a dark theme, the default color of the label when focused is blue which had very bad contrast 
+  with the dark background.
+- Found a few references using ::ng-deep in the .css file to override the default settings but noted that
+  this tended to be a bad practice
+- Found [this](https://stackoverflow.com/questions/74290068/how-avoiding-ng-deep-in-angular-material-dialog-style)
+  StackOverflow post on using the .mat-dialog-container selector in the main styles.css file to alter it directly.
+  With this I set the default color to the dialog box labels to white which made for much better contrast.
+  The post also made a mention of using panelClass property in the dialog reference to set a custom class
+  for each component usage of the dialog but felt a default approach would be cleaner and easier to implmement.

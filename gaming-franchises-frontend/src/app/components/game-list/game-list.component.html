@@ -1,4 +1,6 @@
 <app-add-game></app-add-game>
 <section class="gameList" *ngIf="games$ | async as games">
-    <app-game-card *ngFor="let item of games"[game]='item'></app-game-card>
+    <div>
+        <app-game-card *ngFor="let item of games"[game]='item'></app-game-card>
+    </div>
 </section>
