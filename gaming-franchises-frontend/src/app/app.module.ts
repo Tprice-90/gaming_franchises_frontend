@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonModule } from '@angular/material/button';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MatButtonModule } from '@angular/material/button';
     UpdateGameComponent,
     AddGameComponent,
     DeleteGameComponent,
-    GameDialogBoxComponent
+    GameDialogBoxComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
