@@ -237,3 +237,8 @@ from the original project, I found the error that I made:
   With this I set the default color to the dialog box labels to white which made for much better contrast.
   The post also made a mention of using panelClass property in the dialog reference to set a custom class
   for each component usage of the dialog but felt a default approach would be cleaner and easier to implmement.
+
+### 2023/03/21
+- Not documented, but I spent some time updating the styles for each component, further styling will be done, but 
+  for now I'm leaving it as it is
+- Next thing I want to do is create a home page component which will just serve as a way to get to the games list
